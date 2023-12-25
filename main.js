@@ -1,25 +1,17 @@
-function bubbleSort(arr) {
-    var len = arr.length;
-    var swapped;
-    do {
-      swapped = false;
-      for (var i = 0; i < len - 1; i++) {
-        if (arr[i] > arr[i + 1]) {
-          // Swap elements if they are in the wrong order
-          var temp = arr[i];
-          arr[i] = arr[i + 1];
-          arr[i + 1] = temp;
-          swapped = true;
+let array = [267, 33, 68, 63, 11, 3, 885, 327]
+
+function bubblesort(array){
+    let length = array.length
+    for(let i= 0; i< length; i++){
+        for(let j= 0; j< length; j++){
+            if(array[j] > array[j + 1]) {
+                let temp = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = temp
+            }
         }
-      }
-    } while (swapped);
-  
-    return arr;
-  }
-  
-  // Contoh penggunaan
-  var arrayToSort = [64, 34, 25, 12, 22, 11, 90];
-  console.log("Array sebelum diurutkan: " + arrayToSort);
-  var sortedArray = bubbleSort(arrayToSort);
-  console.log("Array setelah diurutkan: " + sortedArray);
-  
+        console.log('iteration ${i + 1}:', array)
+    }
+    return array
+}
+console.log(bubblesort(array))
